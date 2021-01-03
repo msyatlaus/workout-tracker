@@ -1,14 +1,11 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://bradleyguidry:Min3wc0de!@cluster0.s5ebv.mongodb.net/workout-tracker?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
+mongoose.connect("mongodb://localhost/workout-tracker", {
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
+
 
 let workoutSeed = [
   {
@@ -87,7 +84,7 @@ let workoutSeed = [
       }
     ]
   },
-
+  
   {
     day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
