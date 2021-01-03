@@ -2,7 +2,7 @@ let mongoose = require("mongoose");
 let db = require("../models");
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://bradleyguidry:Min3wc0de!@cluster0.s5ebv.mongodb.net/workout?retryWrites=true&w=majority";
+const uri = "mongodb+srv://bradleyguidry:Min3wc0de!@cluster0.s5ebv.mongodb.net/workout-tracker?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
