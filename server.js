@@ -2,7 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const uri = "mongodb+srv://bradleyguidry:Min3wc0de!@cluster0.s5ebv.mongodb.net/workout-tracker?retryWrites=true&w=majority";
 const app = express();
 
